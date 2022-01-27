@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CalMate</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        font-size: large;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        position: relative;
+        width: 600px;
+        height: 500px;
+        padding: 40px 30px 30px;
+        top: 150px;
+      }
+      .container .description {
+        width: 500px;
+        height: 200px;
+        margin-top: calc(100% / 6);
+      }
+      .container .demo {
+        height: 30px;
+        background: rgb(18, 189, 75);
+        color: white;
+        margin-left: calc(100% / 2.4);
+        border: none;
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px black;
+        padding: 5px;
+        animation: 1s anime infinite;
+      }
+      @keyframes anime {
+        0% {
+          transform: translateY(0);
+          opacity: 0.2;
+        }
+        40% {
+          transform: translateY(-20px);
+          opacity: 1;
+        }
+        60% {
+          transform: translateY(-5px);
+          opacity: 1;
+        }
+        80% {
+          transform: translateY(-13px);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-5px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="description">
+        <p>
+          CalMate is a simple program, simple, and easy to use, does not
+          interfere with other program code, the program is made as a calculator
+          has a design that is close to realistic.
+        </p>
+      </div>
+      <button class="demo">Try Demo</button>
+    </div>
+
+    <!-- Here is CalMate area -->
+    <div id="calmate"></div>
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="calc.js"></script>
+    <script>
+      var calmate = new CalMate();
+      var button = document.querySelector(".demo");
+      button.addEventListener("click", function () {
+        calmate.call("calmate"); // use your_variable.call(CalMateAreaYouHave)
+      });
+    </script>
+  </body>
+</html>
